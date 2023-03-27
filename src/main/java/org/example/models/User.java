@@ -23,9 +23,8 @@ public class User {
     private LocalDate birthDate;
 
     @Field("gender")
-    private Gender gender;
+    private String gender;
 
-    public enum Gender {
-        MALE, FEMALE
-    }
+    @Field("sport")
+    private Sport sport;
 }
