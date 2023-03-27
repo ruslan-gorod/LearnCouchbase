@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -45,5 +46,11 @@ public class UserController {
         User user = userService.findUserById(id).orElseThrow();
         user.setSport(sport);
         return ResponseEntity.ok(userService.updateUser(user));
+    }
+
+    @GetMapping("/sport/{sportName}")
+    public ResponseEntity<List<User>> getUserBySportName(@PathVariable String sportName) {
+        List<User> users = userService.getUsersBySportName(sportName);
+        return ResponseEntity.ok(users);
     }
 }
