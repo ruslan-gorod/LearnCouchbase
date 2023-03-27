@@ -15,5 +15,7 @@ public interface UserRepository extends CouchbaseRepository<User, String> {
     Optional<User> findByEmail(String email);
 
     List<User> findBySportSportName(String sportName);
+
+    List<User> findByEmailContainingOrFullNameContaining(String firstQuery, String secondQuery);
 }
 

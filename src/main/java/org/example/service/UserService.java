@@ -36,5 +36,9 @@ public class UserService {
     public List<User> getUsersBySportName(String sportName) {
         return userRepository.findBySportSportName(sportName);
     }
+
+    public List<User> find(String firstQuery, String secondQuery) {
+        return userRepository.findByEmailContainingOrFullNameContaining(firstQuery, secondQuery);
+    }
 }
 

@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "70ed09c1-a7b5-42ea-bf1e-bf506680aecc",
+		"name": "couchbase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7898924"
+	},
+	"item": [
+		{
+			"name": "GetUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/9e9a5147-8ebb-4344-a55a-b845aa6e2697",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"9e9a5147-8ebb-4344-a55a-b845aa6e2697"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByEmail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/email/john_doe@epam.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"email",
+						"john_doe@epam.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserBySportName",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/sport/Tennis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"sport",
+						"Tennis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserBySearchQuery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/search?q=epam.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "epam.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\": \"9e9a5147-8ebb-4344-a55a-b845aa6e2697\",\r\n   \"email\": \"john_doe@epam.com\",\r\n   \"fullName\": \"John Doe\",\r\n   \"birthDate\": \"1990-10-10\",\r\n   \"gender\": \"MALE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddSportToUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\": \"9e9a5147-8ebb-4344-a55a-b845aa6e2697\",\r\n   \"sportName\": \"Tennis\",\r\n   \"sportProficiency\": \"ADVANCED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/9e9a5147-8ebb-4344-a55a-b845aa6e2697/sport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"9e9a5147-8ebb-4344-a55a-b845aa6e2697",
+						"sport"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

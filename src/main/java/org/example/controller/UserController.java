@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -51,6 +52,12 @@ public class UserController {
     @GetMapping("/sport/{sportName}")
     public ResponseEntity<List<User>> getUserBySportName(@PathVariable String sportName) {
         List<User> users = userService.getUsersBySportName(sportName);
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<User>> searchUsers(@RequestParam(value = "q") String query) {
+        List<User> users = userService.find(query, query);
         return ResponseEntity.ok(users);
     }
 }
