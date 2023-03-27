@@ -1,0 +1,3 @@
+index on the email:
+
+CREATE INDEX ix_email ON `travel-sample`(`email`) USING GSI;
